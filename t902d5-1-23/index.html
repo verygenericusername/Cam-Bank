@@ -56,16 +56,19 @@ h1 {
   CVV:
   </p>
   <button id="setbal">
-  Set Balance To: <input type="number" id="am" class="am" min="0">
+  Set Balance To:
   </button>
+  <input type="number" id="am" class="am" min="0">
   <br>
   <button id="subbal">
-  Subtract Balance By: <input type="number" id="am2" value="0" class="am" min="0">
+  Subtract Balance By:
   </button>
+  <input type="number" id="am2" value="0" class="am" min="0">
   <br>
   <button id="addbal">
-  Add Balance By: <input type="number" id="am3" value="0" class="am" min="0">
+  Add Balance By:
   </button>
+  <input type="number" id="am3" value="0" class="am" min="0">
   <br>
   <button id="dbrb">
   Download Backup Bank Record
@@ -140,10 +143,9 @@ var audio = new Audio("chaching.mp3");
 audio.play();
 });
 addbal.addEventListener("click", function(){
-var temp_bal = localStorage.getItem(parse.bankid);
-temp_bal = temp_bal + am3.value;
-localStorage.setItem(parse.bankid,0);
-localStorage.setItem(parse.bankid,temp_bal);
+var temp = parseInt(localStorage.getItem(parse.bankid));
+temp = temp + parseInt(am3.value);
+localStorage.setItem(parse.bankid,temp);
 balance.innerHTML = "Balance: " + localStorage.getItem(parse.bankid);
 var audio = new Audio("chaching.mp3");
 audio.play();
